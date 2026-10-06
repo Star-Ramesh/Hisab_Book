@@ -1,0 +1,6 @@
+{
+  "name": "My Khata",
+  "description": "Simple personal money tracking and digital passbook ledger with instant balance calculation, search, reports, and backup.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

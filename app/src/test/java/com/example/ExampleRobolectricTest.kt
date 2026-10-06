@@ -1,0 +1,36 @@
+package com.example
+
+import android.content.Context
+import androidx.test.core.app.ApplicationProvider
+import org.junit.Assert.assertEquals
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.robolectric.RobolectricTestRunner
+import org.robolectric.annotation.Config
+
+@RunWith(RobolectricTestRunner::class)
+@Config(sdk = [36])
+class ExampleRobolectricTest {
+
+  @Test
+  fun `read string from context`() {
+    val context = ApplicationProvider.getApplicationContext<Context>()
+    val appName = context.getString(R.string.app_name)
+    assertEquals("My Khata", appName)
+  }
+
+  @Test
+  fun `balance calculation logic test`() {
+    val openingBalance = 10000.0
+    val moneyIn = 5000.0
+    val moneyOut = 1500.0
+    val currentBalance = openingBalance + moneyIn - moneyOut
+    assertEquals(13500.0, currentBalance, 0.001)
+  }
+
+  @Test
+  fun `default user name is blank`() {
+    val settings = com.example.data.local.KhataSettings()
+    assertEquals("", settings.userName)
+  }
+}
